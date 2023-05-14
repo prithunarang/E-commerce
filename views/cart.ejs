@@ -1,0 +1,29 @@
+
+<%- include('partials/header') %>
+
+<h1>Your cart</h1>
+<% if(items.length==0){ %>
+    <center>
+        <h1>Cart is empty</h1>
+    </center>
+<% }else{ %>
+
+    <%  items.forEach(function(item){ %>
+   
+        <img src=<%= item.url %> alt="Team_image">
+    </div>
+    
+    <p class="role"><%= item.name %></p>
+    <p>Price: <%= item.price %> </p>
+  
+  <br>
+
+  <a href="/delete/<%= item._id %>"><button >Delete</button></a>
+  <hr>
+</div>
+<% }) %> 
+<% } %>
+
+
+
+        <%- include('partials/footer') %>
