@@ -37,7 +37,7 @@ app.use(passport.session());
 
 
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb://127.0.0.1:27017/OrrangeDB', {useNewUrlParser:true});
+mongoose.connect('mongodb+srv://prithunarang:Krsna108@e-commerce.ls62ryh.mongodb.net', {useNewUrlParser:true});
 
 
 const userSchema = new mongoose.Schema ({
@@ -247,6 +247,6 @@ app.post("/signup", function(req, res){
         } )
 
         
-app.listen(3000, function(){
+app.listen( process.env.port || 3000, function(){
     console.log("Server is running at port 3000")
 })
