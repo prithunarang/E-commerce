@@ -23,18 +23,8 @@ app.use(session({
 
 
 
-
-
-
-
-
-
-
 app.use(passport.initialize());
 app.use(passport.session());
-
-
-
 
 mongoose.set('strictQuery', true);
 mongoose.connect('mongodb+srv://prithunarang:Krsna108@e-commerce.ls62ryh.mongodb.net', {useNewUrlParser:true});
@@ -43,9 +33,7 @@ mongoose.connect('mongodb+srv://prithunarang:Krsna108@e-commerce.ls62ryh.mongodb
 const userSchema = new mongoose.Schema ({
     email: String,
     password: String,
-    googleId: String,
-    
-    
+    googleId: String, 
 });
 const productSchema = new mongoose.Schema({
     product_name: String,
@@ -247,6 +235,6 @@ app.post("/signup", function(req, res){
         } )
 
         
-app.listen( process.env.PORT || 3000, function(){
-    console.log("Server is running at port 3000")
+app.listen( process.env.PORT || 4000, function(){
+    console.log("Server is running at port 4000")
 })
